@@ -1,0 +1,12 @@
+# Cargo.toml
+[package]
+name = "memory-safe"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = "0.2"
+winapi = { version = "0.3", features = ["memoryapi", "sysinfoapi"], optional = true }
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["memoryapi", "sysinfoapi"] }
